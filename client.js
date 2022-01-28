@@ -1,13 +1,13 @@
 console.log('test JS');
 
 // initializes 'employeeInformation' array
-let employeeInformation = [];
+let employeeDatabase = [];
 
 // purpose of function: take in employee information and store information provided
 function submitEmployee (firstName, lastName, idNumber, jobTitle, annualSalary) {
     console.log('in submitEmployee');
     
-    // create object to take in input parameter values
+    // creates object to take in input parameter values
     let object = {
         firstName,
         lastName,
@@ -16,11 +16,34 @@ function submitEmployee (firstName, lastName, idNumber, jobTitle, annualSalary) 
         annualSalary
     }
 
-    // add object to 'employeeInformation' array
-    employeeInformation.push(object);
+    // adds object to 'employeeInformation' array
+    employeeDatabase.push(object);
 
     // returns 'employeeInformation' array
-    return employeeInformation;
+    return employeeDatabase;
 } // end submitEmployee
 
-console.log(submitEmployee('Dan', 'Fenske', 32432, 'Marketing & Sales Coordinator', 47500)); // functions correctly
+submitEmployee('Dan', 'Fenske', 32432, 'Marketing & Sales Coordinator', 47500); // functions correctly
+submitEmployee('Carl', 'Hancock', 32432, 'Autographer', 24000); // functions correctly
+submitEmployee('Marlin', 'Fish', 32432, 'Professional Fisherwoman', 200000); // functions correctly
+console.log('Employee database: ', submitEmployee('Rock', 'Roll', 32432, 'Rockstar', 55250)); // functions correctly
+
+
+let totalMonthlyCost = 0;
+
+// purpose of function: calculate total monthly cost of employees within 'employeeDatabase' array
+function calculateTotalMonthlyCost (array) {
+    console.log('in totalMonthlyCost');
+    
+    // uses for loop to access 'annualSalary' within each object of 'employeeDatabase'
+    for (let i=0; i<array.length; i++) {
+        console.log('in for loop');
+
+        totalMonthlyCost += array[i].annualSalary;
+    }
+
+    return totalMonthlyCost;
+} // end calculateTotalMonthlyCost
+
+console.log('Total monthly cost: ', calculateTotalMonthlyCost(employeeDatabase)); // functions correctly. Current value: $326,750
+
