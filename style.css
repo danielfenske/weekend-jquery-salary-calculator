@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* POSITIONING */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+#employeeForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputFields {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+/* FONT STYLING */
+
+#pageTitle {
+    font-size: 36px;
+}
+
+.subHeader {
+    font-size: 28px;
+}
+
+.inputField{
+    font-size: 20px;
+}
