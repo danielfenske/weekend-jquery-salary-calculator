@@ -1,5 +1,8 @@
 console.log('test JS');
 
+// call to jQuery
+$(document).ready(readyNow);
+
 // initializes 'employeeInformation' array
 let employeeDatabase = [];
 
@@ -49,3 +52,7 @@ function calculateTotalMonthlyCost (array) {
 
 console.log('Total monthly cost: ', calculateTotalMonthlyCost(employeeDatabase)); // functions correctly. Current value: ~$27229.17
 
+function readyNow(){
+    console.log('test JQ');
+    
+} // end readyNow
