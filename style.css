@@ -1,11 +1,11 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
-}
+} */
 
 /* POSITIONING */
 
-header {
+header, footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,13 +25,31 @@ header {
     gap: 30px;
 }
 
+#employeeResults {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+/* BLOCK STYLING */
+
+#employeeTable {
+    border: 1px solid black;
+}
+
+#employeeTable td, #employeeTable th {
+    border: 1px solid black;
+    padding: 20px;
+}
+
 /* FONT STYLING */
 
 #pageTitle {
     font-size: 36px;
 }
 
-.subHeader {
+.subHeader, #monthlyCost {
     font-size: 28px;
 }
 
