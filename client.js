@@ -42,8 +42,10 @@ function calculateTotalMonthlyCost (array) {
         totalMonthlyCost += array[i].annualSalary;
     }
 
+    totalMonthlyCost = totalMonthlyCost / 12;
+
     return totalMonthlyCost;
 } // end calculateTotalMonthlyCost
 
-console.log('Total monthly cost: ', calculateTotalMonthlyCost(employeeDatabase)); // functions correctly. Current value: $326,750
+console.log('Total monthly cost: ', calculateTotalMonthlyCost(employeeDatabase)); // functions correctly. Current value: ~$27229.17
 
