@@ -32,6 +32,10 @@ function addEmployee () {
 
     // display new employee to DOM 
     displayNewEmployee();
+
+    // ready to execute calculateTotalMonthlyCost
+    calculateTotalMonthlyCost ();
+
 } // end addEmployee
 
 // addEmployee('Dan', 'Fenske', 32432, 'Marketing & Sales Coordinator', 47500); // functions correctly
@@ -46,46 +50,33 @@ function displayNewEmployee() {
     $('#employeeTable').append(el);
 }
 
+// purpose of function: calculate total monthly cost of employees within 'employeeDatabase' array
+function calculateTotalMonthlyCost () {
+    console.log('in calculateTotalMonthlyCost');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let totalMonthlyCost = 0;
-
-// // purpose of function: calculate total monthly cost of employees within 'employeeDatabase' array
-// function calculateTotalMonthlyCost (array) {
-//     console.log('in calculateTotalMonthlyCost');
+    // initializes total monthly cost
+    let totalMonthlyCost = 0;
     
-//     // uses for loop to access 'annualSalary' within each object of 'employeeDatabase'
-//     for (let i=0; i<array.length; i++) {
-//         console.log('in for loop');
+    // uses for loop to access 'annualSalary' within each object of 'employeeDatabase'
+    for (let i=0; i<employeeDatabase.length; i++) {
+        console.log('in for loop');
 
-//         totalMonthlyCost += array[i].annualSalary;
-        
-//     }
+        totalMonthlyCost += (employeeDatabase[i].annualSalary / 12);
+    }
 
-//     totalMonthlyCost = totalMonthlyCost / 12;
+    // round totalMonthlyCost to nearest cent
+    Math.round((totalMonthlyCost*10)/10);
 
-//     console.log('totalMonthlyCost', totalMonthlyCost);
+    // display monthly total cost
+    let el = $('#monthlyCostOutput');
+    el.empty();
+    el.append(`$: ${totalMonthlyCost}`);
+
+    console.log('totalMonthlyCost', totalMonthlyCost);
     
-//     return totalMonthlyCost;
-// } // end calculateTotalMonthlyCost
+} // end calculateTotalMonthlyCost
 
-// console.log('Total monthly cost: ', calculateTotalMonthlyCost(employeeDatabase)); // functions correctly. Current value: ~$27229.17
+console.log('Total monthly cost: ', calculateTotalMonthlyCost(employeeDatabase)); // functions correctly. Current value: ~$27229.17
 
 
 function readyNow(){
