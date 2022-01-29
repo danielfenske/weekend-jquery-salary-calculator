@@ -6,6 +6,8 @@ $(document).ready(readyNow);
 // initializes 'employeeInformation' array
 let employeeDatabase = [];
 
+const maxTotalMonthlyCost = 20000;
+
 let newEmployee = {
     firstName: '',
     lastName: '',
@@ -50,7 +52,7 @@ function addEmployee () {
 
 function displayNewEmployee() {
     // let deleteButton = $('<button id="delete">-</button>');
-    let el = $(`<tr><td>${newEmployee.firstName}</td><td>${newEmployee.lastName}</td><td>${newEmployee.idNumber}</td><td>${newEmployee.jobTitle}</td><td>$${newEmployee.annualSalary}</td><td><button id="remove">REMOVE</button></td></tr>`);
+    let el = $(`<tr class="employee"><td>${newEmployee.firstName}</td><td>${newEmployee.lastName}</td><td>${newEmployee.idNumber}</td><td>${newEmployee.jobTitle}</td><td>$${newEmployee.annualSalary}</td><td><button class="remove">REMOVE</button></td></tr>`);
     $('#employeeTable').append(el);
 }
 
@@ -76,16 +78,27 @@ function calculateTotalMonthlyCost () {
     el.empty();
     el.append(`$${roundedTotalMonthlyCost}`);
 
-    console.log('totalMonthlyCost', roundedTotalMonthlyCost);
-    
+    if (roundedTotalMonthlyCost > maxTotalMonthlyCost) {
+        $('#monthlyCostBlock').css('background-color', 'red')
+    }
+
 } // end calculateTotalMonthlyCost
 
 // console.log('Total monthly cost: ', calculateTotalMonthlyCost(employeeDatabase)); // functions correctly. Current value: ~$27229.17
 
+function removeEmployee() {
+    console.log('in removeEmployee');
+
+    // learned this code from @sluther on stackoverflow
+    $(this).parent().parent().remove();
+
+} // end removeEmployee
 
 function readyNow(){
     console.log('test JQ');
 
-    $('#submit').on('click', addEmployee)
-
+    $('#submit').on('click', addEmployee);
+    
+    $('#employeeTable').on('click', '.remove', removeEmployee);
+    
 } // end readyNow
