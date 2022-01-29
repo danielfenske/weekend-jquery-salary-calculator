@@ -18,23 +18,27 @@ let newEmployee = {
 function addEmployee () {
     console.log('in addEmployee');
     
-    // creates object to take in input parameter values
-    newEmployee = {
-        firstName: $('#firstName').val(),
-        lastName: $('#lastName').val(),
-        idNumber: $('#idNumber').val(),
-        jobTitle: $('#jobTitle').val(),
-        annualSalary: $('#annualSalary').val()
+    if ($('input').val() === '') {
+        alert('Please fill out all form fields')
+    } else {
+        // creates object to take in input parameter values
+        newEmployee = {
+            firstName: $('#firstName').val(),
+            lastName: $('#lastName').val(),
+            idNumber: $('#idNumber').val(),
+            jobTitle: $('#jobTitle').val(),
+            annualSalary: $('#annualSalary').val()
     }
 
-    // adds object to 'employeeInformation' array
-    employeeDatabase.push(newEmployee);
+        // adds object to 'employeeInformation' array
+        employeeDatabase.push(newEmployee);
 
-    // display new employee to DOM 
-    displayNewEmployee();
+        // display new employee to DOM 
+        displayNewEmployee();
 
-    // ready to execute calculateTotalMonthlyCost
-    calculateTotalMonthlyCost ();
+        // ready to execute calculateTotalMonthlyCost
+        calculateTotalMonthlyCost ();
+    }
 
 } // end addEmployee
 
@@ -45,8 +49,8 @@ function addEmployee () {
 
 
 function displayNewEmployee() {
-    let el = $(`<tr><td>${newEmployee.firstName}</td><td>${newEmployee.lastName}</td><td>${newEmployee.idNumber}</td><td>${newEmployee.jobTitle}</td><td>${newEmployee.annualSalary}</td></tr>`);
-
+    // let deleteButton = $('<button id="delete">-</button>');
+    let el = $(`<tr><td>${newEmployee.firstName}</td><td>${newEmployee.lastName}</td><td>${newEmployee.idNumber}</td><td>${newEmployee.jobTitle}</td><td>$${newEmployee.annualSalary}</td><td><button id="remove">REMOVE</button></td></tr>`);
     $('#employeeTable').append(el);
 }
 
@@ -54,7 +58,7 @@ function displayNewEmployee() {
 function calculateTotalMonthlyCost () {
     console.log('in calculateTotalMonthlyCost');
 
-    // initializes total monthly cost
+    // initializes totalMonthlyCost
     let totalMonthlyCost = 0;
     
     // uses for loop to access 'annualSalary' within each object of 'employeeDatabase'
@@ -65,24 +69,23 @@ function calculateTotalMonthlyCost () {
     }
 
     // round totalMonthlyCost to nearest cent
-    Math.round((totalMonthlyCost*10)/10);
+    let roundedTotalMonthlyCost = Math.round(totalMonthlyCost*100)/100;
 
     // display monthly total cost
     let el = $('#monthlyCostOutput');
     el.empty();
-    el.append(`$: ${totalMonthlyCost}`);
+    el.append(`$${roundedTotalMonthlyCost}`);
 
-    console.log('totalMonthlyCost', totalMonthlyCost);
+    console.log('totalMonthlyCost', roundedTotalMonthlyCost);
     
 } // end calculateTotalMonthlyCost
 
-console.log('Total monthly cost: ', calculateTotalMonthlyCost(employeeDatabase)); // functions correctly. Current value: ~$27229.17
+// console.log('Total monthly cost: ', calculateTotalMonthlyCost(employeeDatabase)); // functions correctly. Current value: ~$27229.17
 
 
 function readyNow(){
     console.log('test JQ');
 
-    // addEmployee();
     $('#submit').on('click', addEmployee)
 
 } // end readyNow
