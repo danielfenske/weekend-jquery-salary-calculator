@@ -23,7 +23,7 @@ function addEmployee () {
     console.log('in addEmployee');
     
     // function will not run if all input fields are not filled in
-    if (($('#firstName').val() === '') || ($('.formField').val() === '')) {
+    if (($('#firstName').val() === '') || ($('#lastName').val() === '') || ($('#idNumber').val() === '') || ($('#jobTitle').val() === '') || ($('#annualSalary').val() === '') ) {
         alert('Please fill out all form fields')
     } else {
         // reassigns newEmployee object to take in input parameter values
