@@ -35,6 +35,9 @@ function addEmployee () {
         // adds object to 'employeeInformation' array
         employeeDatabase.push(newEmployee);
 
+        // empty input values
+        $('input').val('');
+
         // display new employee to DOM 
         displayNewEmployee();
 
@@ -92,7 +95,10 @@ function removeEmployee() {
     console.log('in removeEmployee');
 
     // learned this code from @sluther on stackoverflow
-    $(this).parent().parent().remove();
+    // $(this).parent().parent().remove();
+
+    let removedEmployee = $(this).parent().parent();
+    $(removedEmployee).remove();
 
 } // end removeEmployee
 

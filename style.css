@@ -8,8 +8,8 @@
 body {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 60px 10px 175px 15px 1fr 5px 50px 1fr;
-    background-color: grey;
+    grid-template-rows: 75px 40px 175px 10px 1fr 5px 50px 1fr;
+    background-color: #ebebeb;
 }
 
 header {
@@ -64,18 +64,18 @@ header {
 /* BLOCK STYLING */
 
 header {
-    background-color: #414141;
+    background-color: #001c61;
 }
 
 #employeeForm {
-    background-color: #fffff0;
+    background-color: white;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 10px 10px 0px 0px;
 }
 
 #employeeResults {
-    background-color: whitesmoke;
+    background-color: white;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
@@ -84,7 +84,7 @@ header {
 }
 
 #monthlyCostBlock{
-    background-color: #1c234a;
+    background-color: #001c61;
     color: white;
     border-radius: 0px 0px 10px 10px;
 }
@@ -95,7 +95,7 @@ header {
 
 #monthlyCostOutput {
     background-color: white;
-    color: #1c234a;
+    color: #001c61;
     height: 100%;
     padding-left: 20px;
     padding-right: 100px;
@@ -115,7 +115,7 @@ header {
 .formField {
     outline: 0;
     border: 0;
-    border-bottom: 2px solid #1c234a;
+    border-bottom: 2px solid #001c61;
     box-sizing: border-box;
     background: transparent;
     padding: 10px;
@@ -127,10 +127,10 @@ button {
 }
 
 #submit {
-    background-color: #1c234a;
+    background-color: #001c61;
+    border: 2px solid #001c61;
     color: white;
     padding: 10px 30px;
-    border: 2px solid #1c234a;
     margin: 10px;
     font-size: 14px;
     transition-duration: 0.3s;
@@ -138,28 +138,29 @@ button {
 
 #submit:hover{
     background-color: transparent;
-    border: 2px solid #1c234a;
-    color: #1c234a;;
+    border: 2px solid #001c61;
+    color: #001c61;
 }
 
 #remove {
-    background-color: #8b0000;
-    color: white;
-    padding: 5px 10px;
+    background-color: transparent;
     border: 2px solid #8b0000;
+    color: #8b0000;
+    padding: 5px 10px;
     font-size: 14px;
     transition-duration: 0.3s;
 }
 
 #remove:hover{
-    background-color: transparent;
+    background-color: #8b0000;
     border: 2px solid #8b0000;
-    color: #8b0000;;
+    color: white;
 }
 
 #employeeTable {
     border-collapse: separate;
     border-spacing: 2px 10px;
+    border-radius: 5px;
 }
 
 #tableHeader {
@@ -171,7 +172,7 @@ tr {
 }
 
 th {
-   background-color:#1c234a;
+   background-color:#001c61;
    color: white;
    font-weight: normal;
    text-align: left;
