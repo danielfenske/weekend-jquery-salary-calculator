@@ -52,8 +52,9 @@ function addEmployee () {
 
 function displayNewEmployee() {
     // let deleteButton = $('<button id="delete">-</button>');
-    let el = $(`<tr class="employee"><td>${newEmployee.firstName}</td><td>${newEmployee.lastName}</td><td>${newEmployee.idNumber}</td><td>${newEmployee.jobTitle}</td><td>$${newEmployee.annualSalary}</td><td><button class="remove">REMOVE</button></td></tr>`);
+    let el = $(`<tr class="employee"><td>${newEmployee.firstName}</td><td>${newEmployee.lastName}</td><td>${newEmployee.idNumber}</td><td>${newEmployee.jobTitle}</td><td>$${newEmployee.annualSalary}</td><td><button id="remove">REMOVE</button></td></tr>`);
     $('#employeeTable').append(el);
+    $('#tableHeader th:last-child').show();
 }
 
 // purpose of function: calculate total monthly cost of employees within 'employeeDatabase' array
@@ -97,8 +98,10 @@ function removeEmployee() {
 function readyNow(){
     console.log('test JQ');
 
+    $('#tableHeader th:last-child').hide();
+
     $('#submit').on('click', addEmployee);
     
-    $('#employeeTable').on('click', '.remove', removeEmployee);
+    $('#employeeTable').on('click', '#remove', removeEmployee);
     
 } // end readyNow

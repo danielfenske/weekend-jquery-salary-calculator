@@ -122,7 +122,7 @@ button {
     border: 2px solid #1c234a;
     margin: 10px;
     font-size: 14px;
-    transition-duration: 0.4s;
+    transition-duration: 0.3s;
 }
 
 #submit:hover{
@@ -131,13 +131,47 @@ button {
     color: #1c234a;;
 }
 
-#employeeTable {
-    border: 1px solid black;
+#remove {
+    background-color: #8b0000;
+    color: white;
+    padding: 5px 10px;
+    border: 2px solid #8b0000;
+    font-size: 14px;
+    transition-duration: 0.3s;
 }
 
-#employeeTable td, #employeeTable th {
-    border: 1px solid black;
-    padding: 20px;
+#remove:hover{
+    background-color: transparent;
+    border: 2px solid #8b0000;
+    color: #8b0000;;
+}
+
+#employeeTable {
+    border-collapse: separate;
+    border-spacing: 2px 10px;
+}
+
+#tableHeader {
+    box-shadow: none;
+}
+
+tr {
+    box-shadow: 0px 0px 3px grey;
+}
+
+th {
+   background-color:#1c234a;
+   color: white;
+   font-weight: normal;
+   text-align: left;
+   padding: 10px 30px;
+}
+
+td {
+    background-color: transparent;
+    color: auto;
+    text-align: left;
+    padding: 10px 30px;
 }
 
 /* FONT STYLING */
@@ -152,9 +186,5 @@ button {
 }
 
 .subHeader {
-    font-size: 28px;
-}
-
-.inputField{
-    font-size: 20px;
+    font-size: 24px;
 }
