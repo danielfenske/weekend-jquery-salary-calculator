@@ -1,11 +1,11 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
-} */
+}
 
 /* POSITIONING */
 
-header, footer {
+/* header, footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,9 +30,83 @@ header, footer {
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
+} */
+
+body {
+    display: grid;
+    grid-template-columns: 300px 1fr 300px;
+    grid-template-rows: 60px 10px 200px 30px 1fr 10px 50px 1fr;
+    background-color: grey;
+}
+
+header {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#employeeForm {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.inputFields {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 25px;
+}
+
+#employeeResults {
+    grid-column: 2 / 3;
+    grid-row: 5 /6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+#monthlyCostBlock {
+    grid-column: 2/3;
+    grid-row: 7/8;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    flex-direction: column;
 }
 
 /* BLOCK STYLING */
+
+header {
+    background-color: #414141;
+}
+
+#employeeForm {
+    background-color: #fffff0;
+}
+
+#submit {
+    background-color: #Ffb347;
+}
+
+#employeeResults {
+    background-color: whitesmoke;
+}
 
 #employeeTable {
     border: 1px solid black;
@@ -43,10 +117,24 @@ header, footer {
     padding: 20px;
 }
 
+#monthlyCostBlock{
+    background-color: black;
+    color: white;
+}
+
+#maxedMonthlyCostBlock {
+    background-color: red;
+}
+
 /* FONT STYLING */
+
+* {
+    font-family: sans-serif;
+}
 
 #pageTitle {
     font-size: 36px;
+    color: white;
 }
 
 .subHeader, #monthlyCost {
