@@ -22,14 +22,15 @@ Accomplishing the business need for this application led me to approach this pro
 - Integrate jQuery within client.js functions to receive employee submission and append to DOM
 - Refine the overall look of the application using style.css file
 
-## WIREFRAME
+## Wireframe
 
 ![Wireframe](/salary-calculator-wireframe.png)
 
 ### Built with:
 - HTML5
 - CSS3 
-- JAVASCRIPT
+- JavaScript
+- jQuery    
 
 ### Acknowledgement
 
