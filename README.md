@@ -22,7 +22,7 @@ Accomplishing the business need for this application led me to approach this pro
 
 ## WIREFRAME
 
-![Wireframe](/Users/danielfenske/AtomProjects/tier-two/week-seven/weekend-jquery-salary-calculator/salary-calculator-wireframe.png)
+![Wireframe](/salary-calculator-wireframe.png)
 
 ### Built with:
 - HTML5
