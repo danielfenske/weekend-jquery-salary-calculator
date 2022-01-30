@@ -5,37 +5,10 @@
 
 /* POSITIONING */
 
-/* header, footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-}
-
-#employeeForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.inputFields {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-}
-
-#employeeResults {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: row;
-} */
-
 body {
     display: grid;
-    grid-template-columns: 300px 1fr 300px;
-    grid-template-rows: 60px 10px 200px 30px 1fr 10px 50px 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 60px 10px 175px 15px 1fr 5px 50px 1fr;
     background-color: grey;
 }
 
@@ -98,14 +71,64 @@ header {
 
 #employeeForm {
     background-color: #fffff0;
-}
-
-#submit {
-    background-color: #Ffb347;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 #employeeResults {
     background-color: whitesmoke;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
+
+#monthlyCostBlock{
+    background-color: #1c234a;
+    color: white;
+}
+
+#maxedMonthlyCostBlock {
+    background-color: red;
+}
+
+/* INNER ELEMENT STYLING */
+
+.inputFields {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.formField {
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid #1c234a;
+    box-sizing: border-box;
+    background: transparent;
+    padding: 10px;
+}
+
+button {
+	cursor: pointer;
+	outline: inherit;
+}
+
+#submit {
+    background-color: #1c234a;
+    color: white;
+    padding: 10px 30px;
+    border: 2px solid #1c234a;
+    margin: 10px;
+    font-size: 14px;
+    transition-duration: 0.4s;
+}
+
+#submit:hover{
+    background-color: transparent;
+    border: 2px solid #1c234a;
+    color: #1c234a;;
 }
 
 #employeeTable {
@@ -115,15 +138,6 @@ header {
 #employeeTable td, #employeeTable th {
     border: 1px solid black;
     padding: 20px;
-}
-
-#monthlyCostBlock{
-    background-color: black;
-    color: white;
-}
-
-#maxedMonthlyCostBlock {
-    background-color: red;
 }
 
 /* FONT STYLING */
@@ -137,7 +151,7 @@ header {
     color: white;
 }
 
-.subHeader, #monthlyCost {
+.subHeader {
     font-size: 28px;
 }
 

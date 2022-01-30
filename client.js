@@ -20,7 +20,7 @@ let newEmployee = {
 function addEmployee () {
     console.log('in addEmployee');
     
-    if ($('input').val() === '') {
+    if ($('.formField').val() === '') {
         alert('Please fill out all form fields')
     } else {
         // creates object to take in input parameter values
