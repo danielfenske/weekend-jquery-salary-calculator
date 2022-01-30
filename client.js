@@ -80,7 +80,8 @@ function calculateTotalMonthlyCost () {
     el.append(`$${roundedTotalMonthlyCost}`);
 
     if (roundedTotalMonthlyCost > maxTotalMonthlyCost) {
-        $('#monthlyCostBlock').css('background-color', 'red')
+        $('#monthlyCostBlock').css('background-color', '#8b0000');
+        $('#monthlyCostOutput').css('color', '#8b0000')
     }
 
 } // end calculateTotalMonthlyCost
