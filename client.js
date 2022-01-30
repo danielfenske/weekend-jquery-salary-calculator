@@ -20,7 +20,7 @@ let newEmployee = {
 function addEmployee () {
     console.log('in addEmployee');
     
-    if ($('.formField').val() === '') {
+    if (($('#firstName').val() === '') || ($('.formField').val() === '')) {
         alert('Please fill out all form fields')
     } else {
         // creates object to take in input parameter values
@@ -39,10 +39,10 @@ function addEmployee () {
         $('input').val('');
 
         // display new employee to DOM 
-        displayNewEmployee();
+        displayNewEmployee(newEmployee);
 
         // ready to execute calculateTotalMonthlyCost
-        calculateTotalMonthlyCost ();
+        calculateTotalMonthlyCost (employeeDatabase);
     }
 
 } // end addEmployee
