@@ -6,15 +6,23 @@ $(document).ready(readyNow);
 function readyNow(){
     console.log('test JQ');
 
+    //hide expense container on page load
+    $('#expenseContainer').hide();
+
+    // hide last header for both containers for cleaner UI
     $('#tableHeader th:last-child').hide();
     $('#expenseHeader th:last-child').hide();
 
+    // click listeners for adding employees/expenses
     $('#submit').on('click', addEmployee);
     $('#submitExpense').on('click', addExpense);
     
+    // click listeners for removing employees/expenses
     $('#employeeTable').on('click', '.remove', removeEmployee);
     $('#expenseTable').on('click', '.removeExpense', removeExpense);
     
+    $('#expenseTab').on('click', displayExpenseTab);
+    $('#salaryTab').on('click', displaySalaryTab);
 } // end readyNow
 
 // initializes 'employeeInformation' array
@@ -22,6 +30,28 @@ let employeeDatabase = [];
 
 // declare maxTotalMonthlyCost
 const maxTotalMonthlyCost = 20000;
+
+function displayExpenseTab() {
+    $('#expenseTab').css('background-color', 'white');
+    $('#expenseTab').css('color', '#001c61');
+
+    $('#salaryTab').css('background-color', '#001c61');
+    $('#salaryTab').css('color', 'white');
+
+    $('#salaryContainer').hide();
+    $('#expenseContainer').show();
+}
+
+function displaySalaryTab() {
+    $('#salaryTab').css('background-color', 'white');
+    $('#salaryTab').css('color', '#001c61');
+
+    $('#expenseTab').css('background-color', '#001c61');
+    $('#expenseTab').css('color', 'white');
+
+    $('#expenseContainer').hide();
+    $('#salaryContainer').show();
+}
 
 // purpose of function: take in employee information and store information provided
 function addEmployee () {

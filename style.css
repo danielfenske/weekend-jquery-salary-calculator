@@ -4,74 +4,81 @@
 }
 
 /* POSITIONING */
-
-#salaryContainer {
+body {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 80px 20px 200px 10px 1fr 5px 50px 1fr;
-    background-color: #ebebeb;
-}
-
-#expenseContainer {
-    display: grid;
-    grid-template-columns: 1fr 974.45px 1fr;
-    grid-template-rows: 80px 20px 200px 10px 1fr 5px 50px 1fr;
-    background-color: #ebebeb;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 80px 30px 1fr 1fr 1fr;
 }
 
 header {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+}
+
+#tabs {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+#salaryContainer, #expenseContainer {
+    grid-column: 2 / 4;
+    grid-row: 4 / 5;
+
+    display: grid;
+    grid-template-columns: 1fr 5px 1fr;
+    grid-template-rows: 1fr 10px 1fr 10px 1fr;
+}
+
+#employeeForm, #expenseForm {
     grid-column: 1 / 4;
     grid-row: 1 / 2;
 
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#employeeForm, #expenseForm {
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
     flex-direction: column;
 }
 
-.inputFields {
+/* .inputFields {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
     gap: 25px;
-}
-
-#employeeResults, #expenseResults {
-    grid-column: 2 / 3;
-    grid-row: 5 /6;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-direction: column;
-}
-
-#monthlyCostBlock, #monthlyCostExpensesBlock {
-    grid-column: 2/3;
-    grid-row: 7/8;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
+} */
 
 /* BLOCK STYLING */
 
 header {
     background-color: #001c61;
+}
+
+#tabs li {
+    list-style-type:none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px 10px 0px 0px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#salaryTab {
+    background-color: white;
+    color: #001c61;
+}
+
+#expenseTab {
+    background-color: #001c61;
+    color: white;
 }
 
 #employeeForm, #expenseForm {
