@@ -32,22 +32,22 @@ let employeeDatabase = [];
 const maxTotalMonthlyCost = 20000;
 
 function displayExpenseTab() {
-    $('#expenseTab').css('background-color', 'white');
-    $('#expenseTab').css('color', '#001c61');
+    $('#salaryTab').css('background-color', 'white');
+    $('#salaryTab').css('color', '#001c61');
 
-    $('#salaryTab').css('background-color', '#001c61');
-    $('#salaryTab').css('color', 'white');
+    $('#expenseTab').css('background-color', '#001c61');
+    $('#expenseTab').css('color', 'white');
 
     $('#salaryContainer').hide();
     $('#expenseContainer').show();
 }
 
 function displaySalaryTab() {
-    $('#salaryTab').css('background-color', 'white');
-    $('#salaryTab').css('color', '#001c61');
+    $('#expenseTab').css('background-color', 'white');
+    $('#expenseTab').css('color', '#001c61');
 
-    $('#expenseTab').css('background-color', '#001c61');
-    $('#expenseTab').css('color', 'white');
+    $('#salaryTab').css('background-color', '#001c61');
+    $('#salaryTab').css('color', 'white');
 
     $('#expenseContainer').hide();
     $('#salaryContainer').show();

@@ -5,20 +5,28 @@
 
 /* POSITIONING */
 body {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 80px 30px 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    background-color: #ebebeb;
 }
 
 header {
-    grid-column: 1 / 5;
-    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 #tabs {
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
-
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -26,16 +34,14 @@ header {
 }
 
 #salaryContainer, #expenseContainer {
-    grid-column: 2 / 4;
-    grid-row: 4 / 5;
-
     display: grid;
-    grid-template-columns: 1fr 5px 1fr;
-    grid-template-rows: 1fr 10px 1fr 10px 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10px 200px 10px 40px;
+    width: 975px;
 }
 
 #employeeForm, #expenseForm {
-    grid-column: 1 / 4;
+    grid-column: 1 / 2;
     grid-row: 1 / 2;
 
     display: flex;
@@ -45,25 +51,65 @@ header {
     flex-direction: column;
 }
 
-/* .inputFields {
+.inputFields {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
     gap: 25px;
-} */
+}
+
+#employeeResults, #expenseResults {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+#monthlyCostBlock, #monthlyCostExpensesBlock {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+
+    display: grid;
+    grid-template-columns: 4fr 5px 1fr;
+    grid-template-rows: 1fr;
+}
+
+#monthlyCostTitle, #monthlyCostExpensesTitle {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#monthlyCostOutput, #monthlyCostExpensesOutput {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 
 /* BLOCK STYLING */
 
 header {
     background-color: #001c61;
+    width: 100vw;
+    padding: 15px;
 }
 
 #tabs li {
     list-style-type:none;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 10px 10px 0px 0px;
@@ -71,21 +117,22 @@ header {
     cursor:pointer;
 }
 
-#salaryTab {
+#expenseTab {
     background-color: white;
     color: #001c61;
 }
 
-#expenseTab {
+#salaryTab {
     background-color: #001c61;
     color: white;
 }
 
 #employeeForm, #expenseForm {
     background-color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 10px 10px 0px 0px;
+    padding: 20px;
+    border-top: 7px solid #001c61;
+    border-radius: 0px 10px 0px 0px;
+    box-shadow: 0px 3px 8px black;
 }
 
 #employeeResults, #expenseResults {
@@ -94,28 +141,31 @@ header {
     padding-right: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
+    box-shadow: 0px 3px 5px black;
+
 }
 
-#monthlyCostBlock, #monthlyCostExpensesBlock {
+#monthlyCostExpensesBlock, #monthlyCostBlock {
+    background-color: transparent;
+    box-shadow: 0px 3px 5px black;
+}
+
+#monthlyCostTitle, #monthlyCostExpensesTitle {
     background-color: #001c61;
     color: white;
-    border-radius: 0px 0px 10px 10px;
-}
-
-#monthlyCost, #monthlyCostExpensesTitle {
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-right: 20px;
+    border-radius: 0px 0px 0px 10px;
 }
 
 #monthlyCostOutput, #monthlyCostExpensesOutput {
     background-color: white;
     color: #001c61;
-    height: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 20px;
-    padding-right: 100px;
     border-radius: 0px 0px 10px 0px;
-
-    display: flex;
-    align-items: center;
 }
 
 /* INNER ELEMENT STYLING */
@@ -220,6 +270,7 @@ td {
     padding-bottom: 10px;
 }
 
-#monthlyCost, #monthlyCostOutput, #monthlyCostExpensesTitle, #monthlyCostExpensesOutput {
-    font-size: 20px
+#monthlyCostTitle, #monthlyCostOutput, #monthlyCostExpensesTitle, #monthlyCostExpensesOutput {
+    font-weight: bold;
+    font-size: 20px;
 }

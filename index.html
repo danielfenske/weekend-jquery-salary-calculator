@@ -15,6 +15,7 @@
            <h1 id="pageTitle">Expense Calculator</h1>
         </header>
         
+    <main>
         <div id="tabs">
             <li id="salaryTab" data-tab="salaryTab">Salaries</li>
             <li id="expenseTab" data-tab="expenseTab">Other Expenses</li>
@@ -78,8 +79,13 @@
             </section> 
     
             <section id="monthlyCostBlock">
-                <h1 id="monthlyCost">Total monthly cost: </h1>
-                <h1 id="monthlyCostOutput">$0.00</h1>
+                <section id="monthlyCostTitle">
+                    <h1>Total monthly cost: </h1>
+                </section>
+
+                <section id="monthlyCostOutput">
+                    <h1>$0.00</h1>
+                </section>
             </section>
         </div>
         
@@ -113,7 +119,7 @@
     
             <section id="expenseResults">
                 <div class="expenseTableBlock">
-                    <h1 class="expenseTableBlock">Expense Information</h1>
+                    <h1 class="subHeader">Expense Information</h1>
                 
                 <table id="expenseTable">
                     <thead>
@@ -137,9 +143,17 @@
             </section> 
     
             <section id="monthlyCostExpensesBlock">
-                <h1 id="monthlyCostExpensesTitle">Total monthly cost: </h1>
-                <h1 id="monthlyCostExpensesOutput">$0.00</h1>
+                <section id="monthlyCostExpensesTitle">
+                    <h1>Total monthly cost: </h1>
+                </section>
+
+                <section id="monthlyCostExpensesOutput">
+                    <h1>$0.00</h1>
+                </section>
             </section>
+            
         </div>
+    </main>
+        
     </body>
 </html>
