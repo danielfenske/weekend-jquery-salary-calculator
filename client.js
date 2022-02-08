@@ -3,6 +3,9 @@ console.log('test JS');
 // call to jQuery
 $(document).ready(readyNow);
 
+// initializes totalMonthlyExpenses
+let totalMonthlyExpenses = 0;
+
 function readyNow(){
     console.log('test JQ');
 
@@ -139,6 +142,9 @@ function calculateTotalMonthlyCost () {
     if (roundedTotalMonthlyCost > maxTotalMonthlyCost) {
         $('#monthlyCostTitle').css('background-color', '#8b0000');
         $('#monthlyCostOutput').css('color', '#8b0000')
+    } else {
+        $('#monthlyCostTitle').css('background-color', '#001c61');
+        $('#monthlyCostOutput').css('color', '#001c61')
     }
 
 } // end calculateTotalMonthlyCost
@@ -230,9 +236,6 @@ function displayNewExpense() {
 // purpose of function: calculate total monthly cost of expenses within 'expenseDatabase' array
 function calculateTotalMonthlyExpenses () {
     console.log('in calculateTotalMonthlyExpenses');
-
-    // initializes totalMonthlyExpenses
-    let totalMonthlyExpenses = 0;
     
     // uses for loop to access 'annualSalary' within each object of 'employeeDatabase'
     for (let i=0; i<expenseDatabase.length; i++) {
@@ -255,8 +258,10 @@ function calculateTotalMonthlyExpenses () {
 
     // turn totalMonthlyCost block to red if total monthly cost is greater than max ($20,000)
     if (roundedTotalMonthlyExpenses > maxTotalMonthlyExpenses) {
-        $('#monthlyCostExpensesTitle').css('background-color', '#8b0000');
-        $('#monthlyCostExpensesOutput').css('color', '#8b0000')
+        $('#monthlyCostExpensesTitle').css('background-color', '#001c61');
+        $('#monthlyCostExpensesOutput').css('color', '#001c61');
+    } else {
+
     }
 
 } // end calculateTotalMonthlyExpenses

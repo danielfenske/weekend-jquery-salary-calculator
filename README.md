@@ -4,6 +4,8 @@
 
 The Salary Calculator is an application that records employee salaries and adds them up to report total monthly costs. Features of the application include an employee submission form and data table that lists all employees who made a submission. The total monthly cost section of the page will turn red when the cost exceeds $20,000.
 
+UPDATED: I eventually thought of a potential situation where a business may want to see a list of other expenses, aside from salary, along with their total monthly costs. This prompted me to add an additional layer to this project, which now features a second tab that includes a second form and table for other expenses. This can be found by clicking on the "other expenses" tab at the top of the page.
+
 ### Duration 
 
 The total duration of the project was roughly ~16 hours. 
