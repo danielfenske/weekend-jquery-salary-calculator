@@ -137,7 +137,7 @@ function calculateTotalMonthlyCost () {
 
     // turn totalMonthlyCost block to red if total monthly cost is greater than max ($20,000)
     if (roundedTotalMonthlyCost > maxTotalMonthlyCost) {
-        $('#monthlyCostBlock').css('background-color', '#8b0000');
+        $('#monthlyCostTitle').css('background-color', '#8b0000');
         $('#monthlyCostOutput').css('color', '#8b0000')
     }
 
@@ -255,7 +255,7 @@ function calculateTotalMonthlyExpenses () {
 
     // turn totalMonthlyCost block to red if total monthly cost is greater than max ($20,000)
     if (roundedTotalMonthlyExpenses > maxTotalMonthlyExpenses) {
-        $('#monthlyCostExpensesBlock').css('background-color', '#8b0000');
+        $('#monthlyCostExpensesTitle').css('background-color', '#8b0000');
         $('#monthlyCostExpensesOutput').css('color', '#8b0000')
     }
 
