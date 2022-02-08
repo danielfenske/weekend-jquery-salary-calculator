@@ -12,80 +12,132 @@
     </head>
     <body>
        <header>
-           <h1 id="pageTitle">Salary Calculator</h1>
+           <h1 id="pageTitle">Expense Calculator</h1>
         </header>
 
-        <section id="employeeForm">
-            <h1 class="subHeader">Employee Submission</h1>
-
-            <div class="inputFields">
-                <div>
-                    <!-- <h1 class="inputField">First Name</h1> -->
-                    <input type="text" class="formField" id="firstName" autocomplete="off" placeholder="First Name">
+        <!-- <div class="calculatorContainer">
+            <section id="employeeForm">
+                <h1 class="subHeader">Employee Submission</h1>
+    
+                <div class="inputFields">
+                    <div>
+                        <input type="text" class="formField" id="firstName" autocomplete="off" placeholder="First Name">
+                    </div>
+    
+                    <div>
+                        <input type="text" class="formField" id="lastName" autocomplete="off" placeholder="Last Name">
+                    </div>
+    
+                    <div>
+                        <input type="number" class="formField" id="idNumber" placeholder="ID Number">
+                    </div>
+    
+                    <div>
+                        <input type="text" class="formField" id="jobTitle" placeholder="Job Title">
+                    </div>
+    
+                    <div>
+                        <input type="number" class="formField" id="annualSalary" placeholder="Annual Salary">
+                    </div>
                 </div>
-
+    
                 <div>
-                    <!-- <h1 class="inputField">Last Name</h1> -->
-                    <input type="text" class="formField" id="lastName" autocomplete="off" placeholder="Last Name">
+                    <button id="submit">SUBMIT</button>
                 </div>
+    
+            </section>
+    
+            <section id="employeeResults">
+                <div class="employeeTableBlock">
+                    <h1 class="subHeader">Employee Information</h1>
+                
+                <table id="employeeTable">
+                    <thead>
+                        <tr id="tableHeader">
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>ID Number</th>
+                            <th>Job Title</th>
+                            <th>Annual Salary</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+    
+                    <tbody id="employeeRows">
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                
+            </section> 
+    
+            <section id="monthlyCostBlock">
+                <h1 id="monthlyCost">Total monthly cost: </h1>
+                <h1 id="monthlyCostOutput">$0.00</h1>
+            </section>
+        </div> -->
+        
+        <div class="calculatorContainer">
+            <section id="expenseForm">
+                <h1 class="subHeader">Expense Submission</h1>
+    
+                <div class="inputFields">
+                    <div>
+                        <input type="text" class="formField" id="expenseName" autocomplete="off" placeholder="Expense">
+                    </div>
 
+                    <div>
+                        <input type="text" class="formField" id="expenseCategory" placeholder="Category">
+                    </div>
+
+                    <div>
+                        <input type="number" class="formField" id="numberOfUnits" placeholder="Number of Units">
+                    </div>
+
+                    <div>
+                        <input type="number" class="formField" id="costPerUnit" placeholder="Cost Per Unit">
+                    </div>
+
+                    <div>
+                        <input type="number" class="formField" id="costPerUnit" placeholder="Cost Per Unit">
+                    </div>
+                </div>
+    
                 <div>
-                    <!-- <h1 class="inputField">ID Number</h1> -->
-                    <input type="number" class="formField" id="idNumber" placeholder="ID Number">
+                    <button id="submitExpense">SUBMIT</button>
                 </div>
-
-                <div>
-                    <!-- <h1 class="inputField">Job Title</h1> -->
-                    <input type="text" class="formField" id="jobTitle" placeholder="Job Title">
+    
+            </section>
+    
+            <section id="expenseResults">
+                <div class="expenseTableBlock">
+                    <h1 class="expenseTableBlock">Expense Information</h1>
+                
+                <table id="expenseTable">
+                    <thead>
+                        <tr id="expenseHeader">
+                            <th>Expense</th>
+                            <th>Category</th>
+                            <th>Number of Units</th>
+                            <th>Cost Per Unit</th>
+                            <th>Total Cost</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody id="expenseRows">
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
                 </div>
-
-                <div>
-                    <!-- <h1 class="inputField">Annual Salary</h1> -->
-                    <input type="number" class="formField" id="annualSalary" placeholder="Annual Salary">
-                </div>
-            </div>
-
-            <div>
-                <!-- <h1 class="inputField">Submit</h1> -->
-                <button id="submit">SUBMIT</button>
-            </div>
-
-        </section>
-
-        <section id="employeeResults">
-            <div class="employeeTableBlock">
-                <h1 class="subHeader">Employee Information</h1>
-            
-            <table id="employeeTable">
-                <thead>
-                    <tr id="tableHeader">
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>ID Number</th>
-                        <th>Job Title</th>
-                        <th>Annual Salary</th>
-                        <th></th>
-                    </tr>
-                </thead>
-
-                <tbody id="employeeRows">
-                    <tr>
-                    </tr>
-                </tbody>
-
-                <!-- <tfoot id="tableFooter">
-                    <tr>Hi</tr>
-                </tfoot> -->
-
-            </table>
-            </div>
-            
-        </section> 
-
-        <section id="monthlyCostBlock">
-            <h1 id="monthlyCost">Total monthly cost: </h1>
-            <h1 id="monthlyCostOutput">$0.00</h1>
-        </section>
-
+                
+            </section> 
+    
+            <section id="monthlyCostExpensesBlock">
+                <h1 id="monthlyCostExpensesTitle">Total monthly cost: </h1>
+                <h1 id="monthlyCostExpensesOutput">$0.00</h1>
+            </section>
+        </div>
     </body>
 </html>
