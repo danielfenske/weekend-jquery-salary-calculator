@@ -55,7 +55,7 @@ function displayNewEmployee() {
                         <td>${employeeDatabase[i].lastName}</td>
                         <td>${employeeDatabase[i].idNumber}</td>
                         <td>${employeeDatabase[i].jobTitle}</td>
-                        <td>$${employeeDatabase[i].annualSalary}</td>
+                        <td>${formatNumberAsMoney(employeeDatabase[i].annualSalary)}</td>
                         <td><button data-id=${[i]} class="remove">REMOVE</button></td></tr>`);
         $('#employeeRows').append(el);
         $('#tableHeader th:last-child').show();
@@ -84,10 +84,12 @@ function calculateTotalMonthlyCost () {
     // round totalMonthlyCost to nearest cent
     let roundedTotalMonthlyCost = Math.round(totalMonthlyCost*100)/100;
 
+    let formattedTotalMonthlyCost = formatNumberAsMoney(roundedTotalMonthlyCost);
+
     // display monthly total cost
     let el = $('#monthlyCostOutput');
     el.empty();
-    el.append(`$${roundedTotalMonthlyCost}`);
+    el.append(`${formattedTotalMonthlyCost}`);
 
     // turn totalMonthlyCost block to red if total monthly cost is greater than max ($20,000)
     if (roundedTotalMonthlyCost > maxTotalMonthlyCost) {
@@ -114,6 +116,16 @@ function removeEmployee() {
 
 } // end removeEmployee
 
+function formatNumberAsMoney(number){
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+    });
+
+    return formatter.format(number);
+}
+
 function readyNow(){
     console.log('test JQ');
 
@@ -124,3 +136,4 @@ function readyNow(){
     $('#employeeTable').on('click', '.remove', removeEmployee);
     
 } // end readyNow
+
