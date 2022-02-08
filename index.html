@@ -15,7 +15,7 @@
            <h1 id="pageTitle">Expense Calculator</h1>
         </header>
 
-        <!-- <div class="calculatorContainer">
+        <div id="salaryContainer">
             <section id="employeeForm">
                 <h1 class="subHeader">Employee Submission</h1>
     
@@ -76,9 +76,9 @@
                 <h1 id="monthlyCost">Total monthly cost: </h1>
                 <h1 id="monthlyCostOutput">$0.00</h1>
             </section>
-        </div> -->
+        </div>
         
-        <div class="calculatorContainer">
+        <div id="expenseContainer">
             <section id="expenseForm">
                 <h1 class="subHeader">Expense Submission</h1>
     
@@ -92,15 +92,11 @@
                     </div>
 
                     <div>
+                        <input type="number" class="formField" id="costPerUnit" placeholder="Cost Per Unit">
+                    </div>
+
+                    <div>
                         <input type="number" class="formField" id="numberOfUnits" placeholder="Number of Units">
-                    </div>
-
-                    <div>
-                        <input type="number" class="formField" id="costPerUnit" placeholder="Cost Per Unit">
-                    </div>
-
-                    <div>
-                        <input type="number" class="formField" id="costPerUnit" placeholder="Cost Per Unit">
                     </div>
                 </div>
     
@@ -119,9 +115,10 @@
                         <tr id="expenseHeader">
                             <th>Expense</th>
                             <th>Category</th>
-                            <th>Number of Units</th>
                             <th>Cost Per Unit</th>
+                            <th>Number of Units</th>
                             <th>Total Cost</th>
+                            <th></th>
                         </tr>
                     </thead>
     

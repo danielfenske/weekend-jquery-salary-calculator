@@ -5,9 +5,16 @@
 
 /* POSITIONING */
 
-.calculatorContainer {
+#salaryContainer {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 80px 20px 200px 10px 1fr 5px 50px 1fr;
+    background-color: #ebebeb;
+}
+
+#expenseContainer {
+    display: grid;
+    grid-template-columns: 1fr 974.45px 1fr;
     grid-template-rows: 80px 20px 200px 10px 1fr 5px 50px 1fr;
     background-color: #ebebeb;
 }
@@ -141,7 +148,7 @@ button {
     color: #001c61;
 }
 
-.remove {
+.remove, .removeExpense {
     background-color: white;
     border: 2px solid #8b0000;
     color: #8b0000;
@@ -150,7 +157,7 @@ button {
     transition-duration: 0.3s;
 }
 
-.remove:hover{
+.remove:hover, .removeExpense:hover {
     background-color: #8b0000;
     border: 2px solid #8b0000;
     color: white;
@@ -188,13 +195,6 @@ td {
     text-align: left;
     padding: 10px 30px;
 }
-
-/* #tableFooter tr {
-background-color:#001c61;
-   font-weight: normal;
-   text-align: left;
-   padding: 5px 30px;
-} */
 
 /* FONT STYLING */
 
