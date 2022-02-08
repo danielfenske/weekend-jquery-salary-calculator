@@ -9,15 +9,6 @@ let employeeDatabase = [];
 // declare maxTotalMonthlyCost
 const maxTotalMonthlyCost = 20000;
 
-// initialize newEmployee object 
-let newEmployee = {
-    firstName: '',
-    lastName: '',
-    idNumber: 0,
-    jobTitle: '',
-    annualSalary: 0
-}
-
 // purpose of function: take in employee information and store information provided
 function addEmployee () {
     console.log('in addEmployee');
@@ -26,13 +17,13 @@ function addEmployee () {
     if (($('#firstName').val() === '') || ($('#lastName').val() === '') || ($('#idNumber').val() === '') || ($('#jobTitle').val() === '') || ($('#annualSalary').val() === '') ) {
         alert('Please fill out all form fields')
     } else {
-        // reassigns newEmployee object to take in input parameter values
-        newEmployee = {
+        // initialize newEmployee object and gets values of object from input 
+        let newEmployee = {
             firstName: $('#firstName').val(),
             lastName: $('#lastName').val(),
-            idNumber: $('#idNumber').val(),
+            idNumber: Number($('#idNumber').val()),
             jobTitle: $('#jobTitle').val(),
-            annualSalary: $('#annualSalary').val()
+            annualSalary: Number($('#annualSalary').val())
     }
 
         // adds object to 'employeeInformation' array
@@ -42,10 +33,10 @@ function addEmployee () {
         $('input').val('');
 
         // display new employee to DOM 
-        displayNewEmployee(newEmployee);
+        displayNewEmployee();
 
         // ready to execute calculateTotalMonthlyCost
-        calculateTotalMonthlyCost (employeeDatabase);
+        calculateTotalMonthlyCost ();
     }
 
 } // end addEmployee
@@ -57,10 +48,22 @@ function addEmployee () {
 
 // purpose of function: take in employee information and append to table on DOM
 function displayNewEmployee() {
+    $('#employeeRows').empty();
+    for (let i=0; i<employeeDatabase.length; i++) {
+        let el = $(`<tr class="employee">
+                        <td>${employeeDatabase[i].firstName}</td>
+                        <td>${employeeDatabase[i].lastName}</td>
+                        <td>${employeeDatabase[i].idNumber}</td>
+                        <td>${employeeDatabase[i].jobTitle}</td>
+                        <td>$${employeeDatabase[i].annualSalary}</td>
+                        <td><button data-id=${[i]} class="remove">REMOVE</button></td></tr>`);
+        $('#employeeRows').append(el);
+        $('#tableHeader th:last-child').show();
+    }   
 
-    let el = $(`<tr class="employee"><td>${newEmployee.firstName}</td><td>${newEmployee.lastName}</td><td>${newEmployee.idNumber}</td><td>${newEmployee.jobTitle}</td><td>$${newEmployee.annualSalary}</td><td><button id="remove">REMOVE</button></td></tr>`);
-    $('#employeeTable').append(el);
-    $('#tableHeader th:last-child').show();
+    if (employeeDatabase.length === 0) {
+        $('#tableHeader th:last-child').hide();
+    }
 }
 
 // purpose of function: calculate total monthly cost of employees within 'employeeDatabase' array
@@ -103,8 +106,11 @@ function removeEmployee() {
     // learned this code from @sluther on stackoverflow
     // $(this).parent().parent().remove();
 
-    let removedEmployee = $(this).parent().parent();
-    $(removedEmployee).remove();
+    let removedEmployee = $(this).data('id');
+    employeeDatabase.splice(removedEmployee, 1);
+
+    displayNewEmployee();
+    calculateTotalMonthlyCost();
 
 } // end removeEmployee
 
@@ -115,6 +121,6 @@ function readyNow(){
 
     $('#submit').on('click', addEmployee);
     
-    $('#employeeTable').on('click', '#remove', removeEmployee);
+    $('#employeeTable').on('click', '.remove', removeEmployee);
     
 } // end readyNow

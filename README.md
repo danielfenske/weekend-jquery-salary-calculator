@@ -16,7 +16,7 @@ Accomplishing the business need for this application led me to approach this pro
 
 - Develop a project plan by outlining needs of the application
 - Make a list of actionable items to execute and connect them to their corresponding file
-- Produce framework for application within index.html file
+- Produce framework for application and write structural code within index.html file
 - Integrate a temporary layout by adjusting positioning within style.css file for easy readability and testing
 - Create and test functions within client.js file and use console as reference for function outputs
 - Integrate jQuery within client.js functions to receive employee submission and append to DOM
