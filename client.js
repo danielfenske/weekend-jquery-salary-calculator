@@ -3,9 +3,6 @@ console.log('test JS');
 // call to jQuery
 $(document).ready(readyNow);
 
-// initializes totalMonthlyExpenses
-let totalMonthlyExpenses = 0;
-
 function readyNow(){
     console.log('test JQ');
 
@@ -180,7 +177,7 @@ function formatNumberAsMoney(number){
 
 let expenseDatabase = [];
 
-const maxTotalMonthlyExpenses = 30000;
+const maxTotalMonthlyExpenses = 20000;
 
 function addExpense () {
     console.log('in addExpense');
@@ -193,8 +190,8 @@ function addExpense () {
         let newExpense = {
             expenseName: $('#expenseName').val(),
             expenseCategory: $('#expenseCategory').val(),
-            costPerUnit: Number($('#costPerUnit').val()),
             numberOfUnits: Number($('#numberOfUnits').val()),
+            costPerUnit: Number($('#costPerUnit').val()),
         }
 
         // adds object to 'expenseDatabase' array
@@ -220,8 +217,8 @@ function displayNewExpense() {
         let el = $(`<tr class="expense">
                         <td>${expenseDatabase[i].expenseName}</td>
                         <td>${expenseDatabase[i].expenseCategory}</td>
-                        <td>${formatNumberAsMoney(expenseDatabase[i].costPerUnit)}</td>
                         <td>${expenseDatabase[i].numberOfUnits}</td>
+                        <td>${formatNumberAsMoney(expenseDatabase[i].costPerUnit)}</td>
                         <td>${formatNumberAsMoney((totalCost))}</td>
                         <td><button data-idExpense=${[i]} class="removeExpense">REMOVE</button></td></tr>`);
         $('#expenseRows').append(el);
@@ -236,14 +233,14 @@ function displayNewExpense() {
 // purpose of function: calculate total monthly cost of expenses within 'expenseDatabase' array
 function calculateTotalMonthlyExpenses () {
     console.log('in calculateTotalMonthlyExpenses');
+
+    let totalMonthlyExpenses = 0;
     
     // uses for loop to access 'annualSalary' within each object of 'employeeDatabase'
     for (let i=0; i<expenseDatabase.length; i++) {
+        console.log('in for loop');
 
-        let totalCost = (expenseDatabase[i].numberOfUnits) * (expenseDatabase[i].costPerUnit);
-    
-        // calculate total monthly cost by taking each employee salary within array, adding them together, and dividing by 12
-        totalMonthlyExpenses += (totalCost / 12);
+        totalMonthlyExpenses += (expenseDatabase[i].numberOfUnits) * (expenseDatabase[i].costPerUnit);
     }
 
     // round totalMonthlyCost to nearest cent
@@ -256,14 +253,18 @@ function calculateTotalMonthlyExpenses () {
     el.empty();
     el.append(`${formattedMonthlyExpenses}`);
 
+    console.log('roundedTotalMonthlyExpenses', roundedTotalMonthlyExpenses);
+    console.log('maxTotalMonthlyExpenses', maxTotalMonthlyExpenses);
+
+
     // turn totalMonthlyCost block to red if total monthly cost is greater than max ($20,000)
     if (roundedTotalMonthlyExpenses > maxTotalMonthlyExpenses) {
+        $('#monthlyCostExpensesTitle').css('background-color', '#8b0000');
+        $('#monthlyCostExpensesOutput').css('color', '#8b0000');
+    } else {
         $('#monthlyCostExpensesTitle').css('background-color', '#001c61');
         $('#monthlyCostExpensesOutput').css('color', '#001c61');
-    } else {
-
     }
-
 } // end calculateTotalMonthlyExpenses
 
 function removeExpense() {
