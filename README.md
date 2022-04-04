@@ -26,7 +26,7 @@ Accomplishing the business need for this application led me to approach this pro
 
 ## Wireframe
 
-![Wireframe](/salary-calculator-wireframe.png)
+![Wireframe](/expense-calculator.gif)
 
 ### Built with:
 - HTML5
